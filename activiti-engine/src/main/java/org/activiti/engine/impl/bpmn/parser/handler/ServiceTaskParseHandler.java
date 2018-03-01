@@ -31,17 +31,17 @@ public class ServiceTaskParseHandler extends AbstractActivityBpmnParseHandler<Se
   protected void executeParse(BpmnParse bpmnParse, ServiceTask serviceTask) {
 
     if (StringUtils.isNotEmpty(serviceTask.getType())) {
-      createActivityBehaviorForServiceTaskType(bpmnParse, serviceTask);
+        createActivityBehaviorForServiceTaskType(bpmnParse, serviceTask);
     } else if (ImplementationType.IMPLEMENTATION_TYPE_CLASS.equalsIgnoreCase(serviceTask.getImplementationType())) {
-      createClassDelegateServiceTask(bpmnParse, serviceTask);
+        createClassDelegateServiceTask(bpmnParse, serviceTask);
     } else if (ImplementationType.IMPLEMENTATION_TYPE_DELEGATEEXPRESSION.equalsIgnoreCase(serviceTask.getImplementationType())) {
-      createServiceTaskDelegateExpressionActivityBehavior(bpmnParse, serviceTask);
+        createServiceTaskDelegateExpressionActivityBehavior(bpmnParse, serviceTask);
     } else if (ImplementationType.IMPLEMENTATION_TYPE_EXPRESSION.equalsIgnoreCase(serviceTask.getImplementationType())) {
-      createServiceTaskExpressionActivityBehavior(bpmnParse, serviceTask);
+        createServiceTaskExpressionActivityBehavior(bpmnParse, serviceTask);
     } else if (ImplementationType.IMPLEMENTATION_TYPE_WEBSERVICE.equalsIgnoreCase(serviceTask.getImplementationType()) && StringUtils.isNotEmpty(serviceTask.getOperationRef())) {
-      createWebServiceActivityBehavior(bpmnParse, serviceTask);
+        createWebServiceActivityBehavior(bpmnParse, serviceTask);
     } else {
-      createDefaultServiceTaskActivityBehavior(bpmnParse, serviceTask);
+        createDefaultServiceTaskActivityBehavior(bpmnParse, serviceTask);
     }
 
   }

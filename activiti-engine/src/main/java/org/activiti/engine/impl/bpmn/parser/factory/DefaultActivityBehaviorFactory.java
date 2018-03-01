@@ -172,7 +172,7 @@ public class DefaultActivityBehaviorFactory extends AbstractBehaviorFactory impl
         return null;
     }
 
-    private ServiceTaskDelegateExpressionActivityBehavior createServiceTaskBehavior(ServiceTask serviceTask,
+    protected ServiceTaskDelegateExpressionActivityBehavior createServiceTaskBehavior(ServiceTask serviceTask,
                                                                                     Expression delegateExpression) {
         return new ServiceTaskDelegateExpressionActivityBehavior(serviceTask.getId(),
                                                                  delegateExpression,
